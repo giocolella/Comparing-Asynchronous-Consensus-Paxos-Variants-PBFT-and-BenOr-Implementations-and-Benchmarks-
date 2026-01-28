@@ -94,6 +94,7 @@ The project relies on standard libraries (`asyncio`, `random`, `logging`) and a 
 matplotlib
 numpy
 cryptography
+```
 
 ## 📦 Setup & Usage
 
@@ -103,32 +104,36 @@ Open your terminal and clone the repository to your local machine:
 ```bash
 git clone [https://github.com/giocolella/Comparing-Asynchronous-Consensus-Paxos-Variants-PBFT-and-BenOr-Implementations-and-Benchmarks-.git](https://github.com/giocolella/Comparing-Asynchronous-Consensus-Paxos-Variants-PBFT-and-BenOr-Implementations-and-Benchmarks-.git)
 cd Comparing-Asynchronous-Consensus-Paxos-Variants-PBFT-and-BenOr-Implementations-and-Benchmarks-
+```
 
 ### **2. Install Dependencies**
 Open your terminal and clone the repository to your local machine:
 
 ```bash
 pip install matplotlib numpy cryptography
+```
 
 ### **3. Run the Main Benchmark**
 To execute the comparison of all 5 protocols (Basic Paxos, Multi-Paxos, PBFT, Full BFT Paxos, Ben-Or) and generate the performance/robustness plots:
 
 ```bash
 python Run_All_and_Plot.py
+```
 
 ### **4. Run Scalability Analytics**
 To analyze how the protocols scale when increasing nodes (e.g., N=5 vs N=7) and to visualize the "Cost of Failure" (Steady State vs Recovery Time):
 
 ```bash
 python Run_Analytics.py
+```
 
 ## 📚 Tools & Documentation
-[Zero Knowledge](https://chain.link/education/zero-knowledge-proof-zkp)
+[Paxos Made Simple (Leslie Lamport)](https://lamport.azurewebsites.net/pubs/paxos-simple.pdf)
 
-[StarkNet Docs](https://foundry-rs.github.io/starknet-foundry/index.html)
+[Practical Byzantine Fault Tolerance (Castro & Liskov)](https://dl.acm.org/doi/10.1145/571637.571640)
 
-[Cairo Docs](https://www.starknet.io/cairo-book/)
+[Another Advantage of Free Choice (Ben-Or)](https://dl.acm.org/doi/10.1145/800221.806707)
 
-[StarkNet DApp Docs](https://www.starknet.io/blog/develop-dapp-starknet-js/)
+[Python Asyncio Documentation](https://docs.python.org/3/library/asyncio.html)
 
-[Starknet.js Docs](https://starknetjs.com/docs/guides/intro)
+[Python Cryptography Library](https://cryptography.io/en/latest/)
