@@ -22,7 +22,7 @@
 ## 📌 Overview
 This project provides a comprehensive implementation and comparative analysis of five major distributed consensus algorithms. It utilizes a custom-built **asynchronous network simulator** in Python to evaluate performance (throughput/latency) and robustness (CFT vs BFT) under various network conditions.
 
-The goal is to demystify how these protocols behave in real-world scenarios characterized by latency, jitter, packet loss, and node failures.
+The goal is to show how these protocols behave in real-world scenarios characterized by latency, jitter, packet loss, and node failures.
 
 ---
 
