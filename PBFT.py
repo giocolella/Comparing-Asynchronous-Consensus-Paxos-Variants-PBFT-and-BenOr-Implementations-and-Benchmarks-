@@ -74,8 +74,6 @@ class Network:
         self._seq += 1
         heapq.heappush(self._pq, (deliver_at, self._seq, dst, payload))
 
-# ... (Definizioni MsgType, BFTMessage e ByzantineBehavior rimangono invariate) ...
-
 class MsgType(enum.Enum):
     REQUEST = "REQUEST"
     PREPREPARE = "PREPREPARE"
@@ -196,8 +194,6 @@ class BFTNode:
         elif msg.mtype == MsgType.PREPARE: await self._handle_prepare(msg)
         elif msg.mtype == MsgType.COMMIT: await self._handle_commit(msg)
 
-    # ... (Logica delle fasi REQUEST, PREPREPARE, PREPARE, COMMIT rimane invariata) ...
-
     async def _handle_request(self, msg: BFTMessage):
         if self.id != self.get_primary(self.view): return
         self.seq += 1
@@ -300,9 +296,7 @@ async def demo_safety():
     
     await asyncio.sleep(5)
     
-    # FIX: Robust safety check
     honest_nodes = [n for n in nodes if n.behavior == ByzantineBehavior.HONEST]
-    # We check if value matches "SafeVal" (digest check implicit in protocol + value consistency)
     
     consistent = True
     decided_count = 0
@@ -420,7 +414,6 @@ async def demo_benchmark_dynamic(num_nodes=4, num_decisions=10, base_latency: in
     return elapsed, total_msgs, tps
 
 if __name__ == "__main__":
-    # Test con latenza base 15ms e jitter 5ms
     asyncio.run(demo_benchmark_dynamic(5, 10, base_latency=15, jitter=5))
     asyncio.run(demo_safety())
     asyncio.run(demo_liveness())
